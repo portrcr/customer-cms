@@ -18,7 +18,11 @@ class CustomerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name'		=> fake()->name(),
+			'phone'		=> fake()->phoneNumber(),
+			'email'		=> fake()->safeEmail(),
+			'company'	=> fake()->company(),
+			'status'	=> fake()->randomElement(['Registered', 'Pending Verification', 'In-Onboarding', 'Onboarded'])
         ];
     }
 }
